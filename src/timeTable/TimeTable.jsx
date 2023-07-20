@@ -1,10 +1,13 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import React from 'react'
+import TimeTableRow from './TimeTableRow'
+
 
 const hourData = Array.from({length:11},(i,j)=>j+9)
 console.log(hourData)
 
 function TimeTable() {
+  
   return (
     <div>
       <TableContainer>
@@ -25,6 +28,7 @@ function TimeTable() {
             {hourData.map((time,index)=>(
              <TableRow key={index}>
               <TableCell align="center" width={100}>{`${time}:00 - ${time+1}:00`}</TableCell>
+              <TimeTableRow timeNum={time}/>
              </TableRow>
             )
             )}
